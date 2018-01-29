@@ -1,0 +1,16 @@
+{
+  "name": "NodeTutorial",
+  "version": "1.0.0",
+  "description": "Node Tutorial",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "~1.15.0",
+    "cookie-parser": "~1.4.1",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "~4.13.4",
+    "file-system": "^2.2.2",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {}
+}

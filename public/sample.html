@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src = "sampleMain.js"></script>
+  <title>Hackathon</title>
+  <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+</head>
+<body>
+
+<div class="navbar">
+  <a class = 'filters'>Filters <img src="images/filter.ico" alt="Filter icon" width="20px" height="20px"> </a> 
+
+  <!-- Drop Down Menu For Property Type -->
+  <div class="dropdown">
+    <button class="dropbtn" > <span id = currentType> Property Type</span> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a id = "buyButton" onClick="buyFunction();" style="cursor: pointer;">  Buy   </a>
+      <a id = "rentButton" onCLick="rentFunction();" style="cursor: pointer;"> Rent </a>
+    </div>
+  </div> 
+
+  <!-- Drop Down Menu For Bedroom -->
+  <div class="dropdown">
+    <button class="dropbtn"> <span id = currentBedroomType> Bedroom</span> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdownBedroom">
+      <!-- <form action="/sample" method="get"> -->
+	     <label> <a> <input type="checkbox" name="bedrooms" value="1" id="c1" style="cursor: pointer;" onClick="applyBedroomFilter();"> 1 BHK<br> </a> </label>
+	 	  <label> <a> <label><input type="checkbox" name="bedrooms" value="2" id="c2" style="cursor: pointer;" onClick="applyBedroomFilter();"> 2 BHK<br> </a> </label>
+	 	  <label> <a> <input type="checkbox" name="bedrooms" value="3" id="c3" style="cursor: pointer;" onClick="applyBedroomFilter();"> 3 BHK<br> </a> </label>
+	 	  <label> <a> <input type="checkbox" name="bedrooms" value="4" id="c4" style="cursor: pointer;" onClick="applyBedroomFilter();"> 3+ BHK<br> </a> </label>
+	     <!-- <label> <a> <input type="button" value="Submit" id="submitButton" onClick="applyBedroomFilter();" style="cursor: pointer;"> </a> </label> -->
+	  <!-- </form> -->
+    </div>
+  </div> 
+
+  <!-- Drop Down Menu For Sorting -->
+  <div class="dropdown">
+    <button class="dropbtn"> <span id = currentSortingType> Sort By</span> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a id = "sortrelevance" onClick="sortByPrice('relevance');" style="cursor: pointer;">  Relevance   </a>
+      <a id = "sortpopularity" onClick="sortByPrice('listingPopularityScore');" style="cursor: pointer;">  Popularity   </a>
+      <a id = "sortAsc" onClick="sortByPrice('ASC');" style="cursor: pointer;">  Price (Low to High)   </a>
+      <a id = "sortDesc" onCLick="sortByPrice('DESC');" style="cursor: pointer;"> Price (High to Low) </a>
+      <a id = "sortlistingSellerCompanyScore" onCLick="sortByPrice('listingSellerCompanyScore');" style="cursor: pointer;"> Seller Rating </a>
+    </div>
+  </div> 
+
+  <div class="search-container">
+    <div>
+      <input type="text" id="searchTextField" placeholder="Search City.." name="search" onkeydown = "if (event.keyCode == 13) document.getElementById('searchButton').click()">
+      <button type="submit" id="searchButton" onclick="searchCityFunction()"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+
+</div>
+<div class = "listOfProperties"> 
+   <div style="position: absolute;z-index: 15;top: 21%;left: 50%;transform : translate(-50%, -50%);font-family: 'Verdana', Geneva, sans-serif; font-size:180%;"> Welcome </div>
+   <img src='images/product-home.png' style="position: absolute;z-index: 15;top: 50%;left: 50%;transform : translate(-50%, -50%);">
+   <div style="position: absolute;z-index: 15;top: 80%;left: 50%;transform : translate(-50%, -50%);font-family: 'Verdana', Geneva, sans-serif; font-size:150%;"> Select a Filter Above to continue further </div>
+
+</div>
+<div class="pagination" style="bottom:0px;" id="footer">
+  <a id="p0"> &laquo;</a>
+  <a onclick="pageNoClicked(1)" style="cursor: pointer;" id="p1">1</a>
+  <a onclick="pageNoClicked(2)" style="cursor: pointer;" id="p2">2</a>
+  <a onclick="pageNoClicked(3)" style="cursor: pointer;" id="p3">3</a>
+  <a onclick="pageNoClicked(4)" style="cursor: pointer;" id="p4">4</a>
+  <a onclick="pageNoClicked(5)" style="cursor: pointer;" id="p5">5</a>
+  <a onclick="pageNoClicked(6)" style="cursor: pointer;" id="p6">6</a>
+  <a id="p7"> &raquo;</a>
+</div>
+
+</body>
+</html>
