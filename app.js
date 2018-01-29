@@ -1,13 +1,3 @@
-// var http = require('http');
-// http.createServer(function(request, response) {
-// 	//console.log(request.url);
-// 	response.writeHead(200, {'Content-type' : 'text/plan'});
-// 	response.write('Hey people');
-// 	response.end();
-// 	//response.write(pathName);
-// }).listen(7000);
-
-
 const express = require('express'),
 	http = require('http');
 	bodyParser = require('body-parser'),
