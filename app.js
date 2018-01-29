@@ -15,13 +15,6 @@ var server = http.createServer(app).listen(7000, function() {
 
 var fetchedData;
 var maxBedrooms = 16;
-
-//to fetch customized bedrooms data
-// app.get('/sample', function(req, res) {
-// 	//console.log(req.query.bedrooms);
-// 	console.log(fetchedData);
-// });
-
 //to Fetch Data
 app.get('/results', function(req, res) {
 		//console.log(req.query.bedrooms);
@@ -97,13 +90,8 @@ app.get('/results', function(req, res) {
 
 	 //Applying Paging
 	var startingPropertyNo = (req.query.pageNo-1)*20;
-	//console.log(startingPropertyNo); 
 	midUrl.paging.start = startingPropertyNo;
-
-
 	//Applying Sorting Price Filter
-	
-
 	if(req.query.sortOrder !== undefined) {
 		var sortOrder = req.query.sortOrder;
 		console.log(sortOrder);
@@ -123,12 +111,9 @@ app.get('/results', function(req, res) {
 	var url = "https://" + initialUrl + JSON.stringify(midUrl) + endUrl;
 	xhr.open("GET", url, true);
 	xhr.send();
-	//console.log(url);
 	 xhr.onreadystatechange = function() {
-	 	//console.log("On readyState change function  ");
-	     if (xhr.readyState === 4) {
-
-	     	//console.log("I am getting your data");
+	 	  if (xhr.readyState === 4) {
+		
 	       fetchedData = xhr.responseText;
 	       res.send(JSON.parse(xhr.responseText)); //Outputs a DOMString by default
 	     }
